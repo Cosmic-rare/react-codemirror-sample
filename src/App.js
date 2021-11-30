@@ -73,7 +73,7 @@ const App = () => {
 
       <CodeMirror
         className="codemirror"
-        value={localStorage.getItem("markdown") || "# Hello, World!"}
+        value={"# Hello, World!"}
         extensions={[
           markdown({
             base: markdownLanguage,

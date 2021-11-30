@@ -1,45 +1,57 @@
-/** @jsxImportSource @emotion/react */
+import CodeMirror from '@uiw/react-codemirror';
+import { markdown, markdownLanguage } from '@codemirror/lang-markdown'
+import { languages } from '@codemirror/language-data'
+import { oneDark } from '@codemirror/theme-one-dark'
+import { defaultHighlightStyle, HighlightStyle, tags } from '@codemirror/highlight'
+import { EditorView } from '@codemirror/view'
 
-import { useState } from "react"
-import logo from "./logo.svg"
-import { css } from "@emotion/react"
-
-const azure = css`
-  color: azure;
-`
-const logoStyle = css`
-  height: 40vmin;
-  pointer-events: none;
-  animation: rotate-anime 15s linear infinite;
-  @keyframes rotate-anime {
-    0%  {transform: rotate(0);}
-    100%  {transform: rotate(360deg);}
+const transparentTheme = EditorView.theme({
+  '&': {
+    backgroundColor: 'transparent !important',
+    height: '100%'
   }
-`
-const buttonStyle = css`
-  margin-bottom: 10px;
-`
+})
 
-const App = () => {
-  const [count, setCount] = useState(0)
+const syntaxHighlighting = HighlightStyle.define([
+  {
+    tag: tags.heading1,
+    fontSize: '1.8em',
+    fontWeight: 'bold'
+  },
+  {
+    tag: tags.heading2,
+    fontSize: '1.4em',
+    fontWeight: 'bold'
+  },
+  {
+    tag: tags.heading3,
+    fontSize: '1.2em',
+    fontWeight: 'bold'
+  }
+])
 
-  return(
-    <div css={css`
-      text-align: center;
-    `}>
-      <h1 css={azure}>Hello, React.js</h1>
-
-      <div className="button" css={buttonStyle}>
-        <button 
-          onClick={() => {setCount(count + 1)}} 
-        >
-          Count: {count}
-        </button>
-      </div>
-
-      <img src={logo} alt="react-logo.svg" css={logoStyle} />
+export default function App() {
+  return (
+    <div className="editor">
+      <CodeMirror
+        value="# Hello, World!"
+        extensions={[
+          markdown({
+            base: markdownLanguage,
+            codeLanguages: languages,
+            addKeymap: true,
+          }),
+          oneDark,
+          defaultHighlightStyle.fallback,
+          syntaxHighlighting,
+          transparentTheme,
+          EditorView.lineWrapping
+        ]}
+        onChange={(value, viewUpdate) => {
+          console.log('value:', value);
+          console.log(viewUpdate)
+        }}
+      />
     </div>
-  )
+  );
 }
-
-export default App

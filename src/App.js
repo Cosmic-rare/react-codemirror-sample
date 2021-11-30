@@ -5,6 +5,8 @@ import { oneDark } from '@codemirror/theme-one-dark'
 import { defaultHighlightStyle, HighlightStyle, tags } from '@codemirror/highlight'
 import { EditorView } from '@codemirror/view'
 
+import "./index.css"
+
 const transparentTheme = EditorView.theme({
   '&': {
     backgroundColor: 'transparent !important',

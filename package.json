@@ -2,7 +2,7 @@
   "name": "react-template",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -10,27 +10,18 @@
     "test": "react-scripts test"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "cosmic-rare",
+  "license": "MIT",
   "devDependencies": {
     "react-scripts": "^4.0.3"
   },
   "dependencies": {
-    "@codemirror/commands": "^0.19.1",
-    "@codemirror/gutter": "^0.19.0",
     "@codemirror/highlight": "^0.19.1",
-    "@codemirror/history": "^0.19.0",
-    "@codemirror/lang-javascript": "^0.19.1",
     "@codemirror/lang-markdown": "^0.19.1",
-    "@codemirror/language": "^0.19.2",
     "@codemirror/language-data": "^0.19.0",
-    "@codemirror/matchbrackets": "^0.19.1",
-    "@codemirror/state": "^0.19.0",
     "@codemirror/theme-one-dark": "^0.19.0",
-    "@emotion/react": "^11.7.0",
     "@uiw/react-codemirror": "^4.2.4",
     "react": "^16.13.1",
-    "react-codemirror2": "^7.2.1",
     "react-dom": "^16.13.1"
   },
   "browserslist": {

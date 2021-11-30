@@ -17,14 +17,15 @@ body {
 }
 
 .editor {
-  width: 100%;
+  display: flex;
+  min-height: 500px;
+  max-width: 750px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .codemirror {
-  min-height: 500px;
-  max-width: 720px;
-  width: 90%;
-  margin: 0 auto;
   color: #444;
   line-height: 1.8;
   font-size: 15px;
@@ -32,6 +33,8 @@ body {
   border-radius: 8px;
   padding: 10px;
   background-color: #FFFFFF;
+  margin-right: 15px;
+  width: 100%;
 }
 
 .cm-editor {

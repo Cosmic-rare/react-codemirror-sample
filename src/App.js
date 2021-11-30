@@ -13,9 +13,8 @@ import { lineNumbers } from '@codemirror/gutter'
 
 import "./index.css"
 
-const buttonStyle = css`
-  background-color: #2e2e2e;
-  color: azure;
+const sideBar = css`
+
 `
 
 const transparentTheme = EditorView.theme({
@@ -53,10 +52,6 @@ const App = () => {
   return (
     <div className="editor">
 
-      <button onClick={() => {
-        localStorage.setItem('markdown', Markdown)
-      }} css={buttonStyle}>Save</button>
-
       <CodeMirror
         className="codemirror"
         value={localStorage.getItem("markdown") || "# Hello, World!"}
@@ -77,6 +72,13 @@ const App = () => {
         ]}
         onChange={onChange}
       />
+
+      <div css={sideBar}>
+        <button>EDIT</button>
+        <br />
+        <button>IMG</button>
+      </div>
+
     </div>
   );
 }

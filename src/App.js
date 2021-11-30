@@ -17,6 +17,25 @@ const sideBar = css`
 
 `
 
+const buttonStyle = css`
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: inline-block;
+  background-color: #FFF;
+  border: none;
+  margin: 0px;
+  margin-top: 10px;
+  text-align: center;
+  padding: 0px;
+  box-shadow: 0 18px 18px -10px #0009652b;
+  transition: all 0.5s ease;
+  &:hover {
+    color: #3ea8ff;
+    transform: translateY(-2px);
+  }
+`
+
 const transparentTheme = EditorView.theme({
   '&': {
     backgroundColor: 'transparent !important',
@@ -74,9 +93,9 @@ const App = () => {
       />
 
       <div css={sideBar}>
-        <button>EDIT</button>
+        <button css={buttonStyle}>EDIT</button>
         <br />
-        <button>IMG</button>
+        <button css={buttonStyle}>IMG</button>
       </div>
 
     </div>

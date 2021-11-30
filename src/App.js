@@ -3,11 +3,13 @@
 import CodeMirror from '@uiw/react-codemirror';
 import { markdown, markdownLanguage } from '@codemirror/lang-markdown'
 import { languages } from '@codemirror/language-data'
-import { oneDark } from '@codemirror/theme-one-dark'
+// import { oneDark } from '@codemirror/theme-one-dark'
+import { oneDark } from "./theme"
 import { defaultHighlightStyle, HighlightStyle, tags } from '@codemirror/highlight'
 import { EditorView } from '@codemirror/view'
 import { useState } from "react"
 import { css } from "@emotion/react"
+import { lineNumbers } from '@codemirror/gutter'
 
 import "./index.css"
 
@@ -47,6 +49,7 @@ const App = () => {
   const onChange = (value, valueUpdate) => {
     setMarkdown(value)
   }
+
   return (
     <div className="editor">
 
@@ -55,6 +58,7 @@ const App = () => {
       }} css={buttonStyle}>Save</button>
 
       <CodeMirror
+        className="codemirror"
         value={localStorage.getItem("markdown") || "# Hello, World!"}
         extensions={[
           markdown({
@@ -63,6 +67,9 @@ const App = () => {
             addKeymap: true,
           }),
           oneDark,
+          lineNumbers({
+            formatNumber: 0
+          }),
           defaultHighlightStyle.fallback,
           syntaxHighlighting,
           transparentTheme,

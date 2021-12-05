@@ -5,7 +5,7 @@ import { useState } from "react"
 import "./index.css"
 
 import CodeMirror from "./components/codemirror/codemirror"
-import Sidebar from "./components/sidebar/sidebar"
+import Sidebar from "./components/sidebar"
 
 const App = () => {
   const [Markdown, setMarkdown] = useState("")

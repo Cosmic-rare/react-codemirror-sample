@@ -25,4 +25,14 @@ const sidebarStyle = css`
 
 `
 
-export {buttonStyle, sidebarStyle}
+const sidebar = (props) => {
+  return(
+    <div css={sidebarStyle}>
+      <button css={buttonStyle}>EDIT</button>
+    <br />
+      <button css={buttonStyle}>IMG</button>
+  </div>
+  )
+}
+
+export default sidebar

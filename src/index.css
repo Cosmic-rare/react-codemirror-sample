@@ -9,7 +9,7 @@ body {
 .editor {
   display: flex;
   min-height: 500px;
-  max-width: 750px;
+  max-width: 1500px;
   width: 90%;
   margin: 0 auto;
   margin-top: 20px;
